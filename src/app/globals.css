@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  @apply bg-black text-zinc-100 antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
