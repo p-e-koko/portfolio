@@ -464,10 +464,10 @@ export default function Home() {
               >
                 GitHub
               </a>
-              <a href="#" className="hover:text-zinc-300">
+              <a href="https://www.linkedin.com/in/pann-ei-ko-ko-b47619249/" className="hover:text-zinc-300">
                 LinkedIn
               </a>
-              <a href="#" className="hover:text-zinc-300">
+              <a href="https://drive.google.com/file/d/158ij41ZuhB5XWUGZc2jBsxdupBltRWkY/view?usp=sharing" className="hover:text-zinc-300">
                 Resume
               </a>
             </div>
