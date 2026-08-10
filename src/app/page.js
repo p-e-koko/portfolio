@@ -206,7 +206,6 @@ export default function Home() {
                     {/* Years + vertical line */}
                     <div className="relative flex flex-col items-start text-base font-semibold uppercase tracking-[0.18em] text-zinc-400">
                       <span>Now</span>
-                      <span className="mt-10">2021</span>
                       <div className="pointer-events-none absolute left-[22px] top-2 bottom-1 w-px bg-zinc-600" />
                     </div>
 
@@ -218,14 +217,6 @@ export default function Home() {
                         </p>
                         <p className="text-xs text-zinc-400 sm:text-sm">
                           Bachelor of Science in Information Technology
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-base font-semibold text-zinc-100">
-                          Ayeyarwaddy Adventist Seminary
-                        </p>
-                        <p className="text-xs text-zinc-400 sm:text-sm">
-                          Adventist Highschool
                         </p>
                       </div>
                     </div>
