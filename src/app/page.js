@@ -17,6 +17,34 @@ const projects = [
     whatIDid: "Designed the full UI/UX flow and implemented the application logic in Flutter, integrating dynamic sorting animations and interactive game components.",
     used: ["Flutter", "Firebase Cloud Firestore", "Firebase Remote Config"],
     type: "Mobile Application"
+  },
+  {
+    title: "HabbyKo",
+    description: "A clean, intuitive habit and goal tracker mobile application.",
+    whatIDid: "Designed the interactive UI/UX layout and implemented the application utilizing Riverpod for global state management and Firebase for cloud syncing.",
+    used: ["Flutter", "Firebase Cloud Firestore", "Firebase Authentication", "Riverpod"],
+    type: "Mobile Application"
+  },
+  {
+    title: "System for Purchasing and Inventory (SPI)",
+    description: "University-wide web application for purchasing and inventory management, built in collaboration with university alumni.",
+    whatIDid: "Primarily responsible for frontend architecture, implementing responsive interfaces, dashboard analytics, and clean inventory tables.",
+    used: ["Next.js", "TypeScript", "Tailwind CSS"],
+    type: "Web Application"
+  },
+  {
+    title: "excel_to_lowerthird",
+    description: "Automation script generating PowerPoint lowerthird graphics from Excel sheets for graduation livestreaming.",
+    whatIDid: "Created a Python script that parses excel data sheets and dynamically builds PowerPoint slides based on structured graduation templates.",
+    used: ["Python"],
+    type: "Python Script"
+  },
+  {
+    title: "pdf_to_ppt",
+    description: "AI tool that scans PDF documents and converts them into structured, readable presentation slides.",
+    whatIDid: "Developed a script integrating the Gemini API to analyze document layout, parse unstructured text, and assemble cohesive slides.",
+    used: ["Python", "Google Cloud AI", "Gemini API"],
+    type: "AI Tool"
   }
 ];
 
@@ -480,7 +508,7 @@ export default function Home() {
                 </div>
 
                 {/* Two Column Grid */}
-                <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+                <div className={`grid gap-8 ${(activeProject.title === "AV-Scheduler" || activeProject.title === "algorithm_for_students") ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]" : "lg:grid-cols-1"}`}>
                   {/* Left Column: Details */}
                   <div className="space-y-6">
                     <div>
@@ -526,36 +554,29 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Right Column: Media Showcase Placeholder */}
-                  <div className="space-y-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                      Project Showcase
-                    </h4>
+                  {/* Right Column: Media Showcase */}
+                  {(activeProject.title === "AV-Scheduler" || activeProject.title === "algorithm_for_students") && (
+                    <div className="space-y-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                        Project Showcase
+                      </h4>
 
-                    {/* Conditional Mockup Frame based on Project Type */}
-                    {activeProject.type.includes("Web") && (
-                      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                        {/* Fake Browser Header */}
-                        <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/80 px-4 py-3">
-                          <div className="flex gap-1.5">
-                            <span className="h-3 w-3 rounded-full bg-red-500/80" />
-                            <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
-                            <span className="h-3 w-3 rounded-full bg-green-500/80" />
-                          </div>
-                          <div className="ml-4 flex-1 rounded bg-zinc-950 px-3 py-1 text-[10px] text-zinc-500 font-mono overflow-hidden whitespace-nowrap text-ellipsis flex items-center">
-                            {activeProject.title === "AV-Scheduler" ? (
+                      {activeProject.title === "AV-Scheduler" && (
+                        <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                          <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/80 px-4 py-3">
+                            <div className="flex gap-1.5">
+                              <span className="h-3 w-3 rounded-full bg-red-500/80" />
+                              <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                              <span className="h-3 w-3 rounded-full bg-green-500/80" />
+                            </div>
+                            <div className="ml-4 flex-1 rounded bg-zinc-950 px-3 py-1 text-[10px] text-zinc-500 font-mono overflow-hidden whitespace-nowrap text-ellipsis flex items-center">
                               <span className="flex items-center gap-1.5 opacity-80">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                                 Internal Tool (URL Hidden)
                               </span>
-                            ) : (
-                              `https://${activeProject.title.toLowerCase().replace(/\s+/g, '-') || 'demo'}.apiu.edu`
-                            )}
+                            </div>
                           </div>
-                        </div>
-                        {/* Showcase Media Box */}
-                        <div className="relative flex min-h-[260px] flex-col items-center justify-center border-t-0 border-zinc-800 bg-zinc-950/40 p-6 text-center">
-                          {activeProject.title === "AV-Scheduler" ? (
+                          <div className="relative flex min-h-[260px] flex-col items-center justify-center border-t-0 border-zinc-800 bg-zinc-950/40 p-6 text-center">
                             <div className="w-full flex justify-center items-center py-4">
                               <div className="flex w-full flex-col gap-6 md:flex-row">
                                 <div className="relative h-[280px] w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900 shadow-xl md:h-[320px]">
@@ -566,37 +587,16 @@ export default function Home() {
                                 </div>
                               </div>
                             </div>
-                          ) : (
-                            <div className="space-y-3">
-                              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400">
-                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                </svg>
-                              </div>
-                              <div>
-                                <h5 className="text-sm font-semibold text-zinc-200">Video Demo & Mockups Placeholder</h5>
-                                <p className="mt-1 text-xs text-zinc-500 max-w-xs mx-auto">
-                                  Put your web application demonstration video, walkthrough GIF, or interface screenshots here.
-                                </p>
-                              </div>
-                              <div className="pt-2 text-[10px] text-zinc-600 font-mono">
-                                {`<!-- Replace this section in src/app/page.js with <video> or <Image> components -->`}
-                              </div>
-                            </div>
-                          )}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {activeProject.type.includes("Mobile") && (
-                      <div className="mx-auto max-w-[280px] overflow-hidden rounded-[36px] border-4 border-zinc-800 bg-zinc-900/40 shadow-xl">
-                        {/* Fake Mobile Camera notch */}
-                        <div className="flex justify-center bg-zinc-900 py-2">
-                          <div className="h-4 w-20 rounded-full bg-zinc-950" />
-                        </div>
-                        {/* Showcase Media Box */}
-                        <div className={`relative flex flex-col items-center justify-center text-center ${activeProject.title === "algorithm_for_students" ? "min-h-[500px] bg-black p-0" : "min-h-[340px] bg-zinc-950/40 p-6"}`}>
-                          {activeProject.title === "algorithm_for_students" ? (
+                      {activeProject.title === "algorithm_for_students" && (
+                        <div className="mx-auto max-w-[280px] overflow-hidden rounded-[36px] border-4 border-zinc-800 bg-zinc-900/40 shadow-xl">
+                          <div className="flex justify-center bg-zinc-900 py-2">
+                            <div className="h-4 w-20 rounded-full bg-zinc-950" />
+                          </div>
+                          <div className="relative flex min-h-[500px] flex-col items-center justify-center bg-black p-0 text-center">
                             <div className="flex h-full w-full items-center justify-center overflow-hidden">
                               <video
                                 src="/images/MicrosoftTeams-video.mp4"
@@ -607,67 +607,11 @@ export default function Home() {
                                 className="h-full w-full object-cover"
                               />
                             </div>
-                          ) : (
-                            <div className="space-y-3">
-                              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400">
-                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                              </div>
-                              <div>
-                                <h5 className="text-sm font-semibold text-zinc-200">Mobile App Demo Placeholder</h5>
-                                <p className="mt-1 text-xs text-zinc-500 max-w-[180px] mx-auto">
-                                  Place your vertical screen recordings, app store mockups, or system capture video here.
-                                </p>
-                              </div>
-                              <div className="pt-2 text-[10px] text-zinc-600 font-mono">
-                                {`<!-- Insert mobile <video> or <Image> -->`}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {!activeProject.type.includes("Web") && !activeProject.type.includes("Mobile") && (
-                      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
-                        {/* Fake Code Editor Header */}
-                        <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/60 px-4 py-2.5">
-                          <div className="flex items-center gap-2">
-                            <div className="flex gap-1.5">
-                              <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                              <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                              <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                            </div>
-                            <span className="ml-2 font-mono text-[10px] text-zinc-400">
-                              {activeProject.title.toLowerCase().replace(/\s+/g, '_')}.py
-                            </span>
                           </div>
                         </div>
-                        {/* Showcase Media Box / Terminal */}
-                        <div className="p-4 font-mono text-[11px] leading-relaxed text-zinc-300 min-h-[260px] flex flex-col justify-between">
-                          <div className="space-y-1 text-zinc-400">
-                            <p className="text-zinc-600"># Run the script using Python</p>
-                            <p className="text-zinc-300">
-                              <span className="text-orange-400">$</span> python {activeProject.title.toLowerCase().replace(/\s+/g, '_')}.py
-                            </p>
-                            <p className="text-green-400">Initializing components...</p>
-                            <p className="text-zinc-400">Loading configurations and templates...</p>
-                            <p className="text-zinc-400">Processing input files...</p>
-                            <p className="text-green-400">✓ Task executed successfully!</p>
-                          </div>
-
-                          <div className="mt-4 border border-dashed border-zinc-800 bg-zinc-900/30 rounded-xl p-4 text-center">
-                            <span className="text-xl">📊</span>
-                            <h5 className="text-xs font-semibold text-zinc-300 mt-1">Script Demo Placeholder</h5>
-                            <p className="text-[10px] text-zinc-500 max-w-[200px] mx-auto mt-0.5">
-                              Replace this container with terminal screenshots, output graphics, or demo GIFs.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
