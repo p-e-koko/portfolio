@@ -1,0 +1,227 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.2cm,right=1.2cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet} % Clean sans-serif look
+\usepackage[T1]{fontenc}
+
+% Custom Colors
+\definecolor{mainblue}{HTML}{3A4959}
+\definecolor{graytext}{HTML}{4A4A4A}
+\definecolor{lightgray}{HTML}{D3D3D3}
+
+% Custom Bullets
+\renewcommand{\labelitemi}{\textcolor{mainblue}{\small\textbullet}}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=mainblue,
+    filecolor=mainblue,      
+    urlcolor=mainblue,
+}
+
+\pagestyle{empty}
+
+% -------- Timeline Macros --------
+\newcommand{\timelineheader}[2]{%
+  \vspace{1ex}
+  \noindent\hspace{-15pt}\makebox[0pt][c]{\raisebox{-0.15cm}{\tikz\node[circle,fill=mainblue,text=white,inner sep=2pt,minimum size=0.6cm]{\small\faIcon{#1}};}}%
+  \hspace{15pt}\textbf{\large\textcolor{mainblue}{\uppercase{#2}}}\par\vspace{0.5ex}%
+}
+
+\newcommand{\timelineitemheader}[3]{%
+  \vspace{0.8ex}
+  \noindent\hspace{-15pt}\makebox[0pt][c]{\raisebox{0.05cm}{\tikz\node[circle,draw=mainblue,thick,fill=white,inner sep=1.5pt]{};}}%
+  \hspace{15pt}\textbf{#1} \hfill \textcolor{graytext}{\small #2} \par
+  \noindent\textcolor{graytext}{\small\textit{#3}} \par\vspace{0.2ex}%
+}
+
+\newcommand{\timelineitemdesc}[1]{%
+  \noindent%
+  \begin{minipage}{\linewidth}
+    \small #1
+  \end{minipage}\par\vspace{0.5ex}%
+}
+
+\begin{document}
+
+% ----------------- HEADER -----------------
+\begin{minipage}{\textwidth}
+{\Huge\textbf{\textcolor{mainblue}{\uppercase{Pann Ei Ko Ko}}}}\par\vspace{0.1cm}
+{\Large\textcolor{graytext}{\uppercase{Software Developer}}}\par\vspace{0.2cm}
+\noindent\textcolor{mainblue}{\rule{\textwidth}{1pt}}\par\vspace{0.2cm}
+\end{minipage}
+
+% ----------------- TWO COLUMNS -----------------
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+
+  % CONTACT
+  {\large\textbf{\textcolor{mainblue}{\uppercase{Contact}}}}\par
+  \noindent\rule{0.9\linewidth}{0.5pt}\par\vspace{0.2cm}
+  
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{@{}c@{\hspace{0.3cm}}p{0.8\linewidth}@{}}
+    \textcolor{mainblue}{\faEnvelope} & \href{mailto:pekkodev@gmail.com}{\small pekkodev@gmail.com} \\
+    \textcolor{mainblue}{\faGithub} & \href{https://github.com/p-e-koko/}{\small github.com/p-e-koko} \\
+    \textcolor{mainblue}{\faMapMarkerAlt} & \small Saraburi, Thailand \\
+  \end{tabular}
+
+  \vspace{0.4cm}
+  
+  % SKILLS
+  {\large\textbf{\textcolor{mainblue}{\uppercase{Skills}}}}\par
+  \noindent\rule{0.9\linewidth}{0.5pt}\par\vspace{0.3cm}
+  
+  \textbf{Languages}
+  \begin{itemize}[leftmargin=12pt,itemsep=1pt,topsep=1pt,parsep=0pt]
+    \item \small TypeScript, JavaScript
+    \item \small Python, PHP, Dart, HTML/CSS
+  \end{itemize}
+  \vspace{0.2cm}
+  
+  \textbf{Frontend \& Mobile}
+  \begin{itemize}[leftmargin=12pt,itemsep=1pt,topsep=1pt,parsep=0pt]
+    \item \small React, Next.js, Flutter
+    \item \small Tailwind CSS
+  \end{itemize}
+  \vspace{0.2cm}
+  
+  \textbf{Backend \& Databases}
+  \begin{itemize}[leftmargin=12pt,itemsep=1pt,topsep=1pt,parsep=0pt]
+    \item \small Node.js, Laravel
+    \item \small PostgreSQL, MySQL, Firebase
+  \end{itemize}
+  \vspace{0.2cm}
+  
+  \textbf{Tools \& DevOps}
+  \begin{itemize}[leftmargin=12pt,itemsep=1pt,topsep=1pt,parsep=0pt]
+    \item \small Docker, Git
+    \item \small Google Cloud, Gemini API
+  \end{itemize}
+
+  \vspace{0.4cm}
+
+  % LANGUAGES
+  {\large\textbf{\textcolor{mainblue}{\uppercase{Languages}}}}\par
+  \noindent\rule{0.9\linewidth}{0.5pt}\par\vspace{0.3cm}
+  \begin{itemize}[leftmargin=12pt,itemsep=2pt,topsep=0pt,parsep=0pt]
+    \item \small English (Professional)
+    \item \small Burmese (Native)
+  \end{itemize}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.66\textwidth}
+
+\begin{tcolorbox}[
+  enhanced,
+  boxrule=0pt,
+  frame hidden,
+  colback=white,
+  borderline west={1.2pt}{0pt}{graytext},
+  sharp corners,
+  left=15pt,
+  right=0pt,
+  top=0pt,
+  bottom=0pt,
+  boxsep=0pt,
+  breakable=true
+]
+
+% PROFILE 
+\timelineheader{user}{Profile}
+\timelineitemdesc{\textcolor{graytext}{Information Technology student with proven experience building robust full-stack web and mobile applications, optimizing workflows, and integrating cloud technologies. Passionate about solving business problem, clear system design, scalable backends, and responsive UIs.}}
+
+% WORK EXPERIENCE
+\timelineheader{briefcase}{Work Experience}
+
+\timelineitemheader{Junior Software Developer}{2025 -- 2026}{DH Digilab Co., Ltd.}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Developed IoT-integrated web applications emphasizing Digital Twin concepts in collaboration with senior engineers.
+  \item Built responsive, interactive 3D frontend interfaces utilizing Three.js, React, TypeScript, and Tailwind CSS.
+\end{itemize}
+}
+
+\timelineitemheader{Web Master}{2024 -- 2025}{SEUM: Southeast Union Mission}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Maintained and modernized the organization's web presence, directly handling structural architecture and content integration to improve UX.
+\end{itemize}
+}
+
+\timelineitemheader{Student Assistant - IT Support}{2023 -- Present}{APIU Technology Services}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Troubleshot and resolved software, hardware, and network issues for students, faculty, and administrative staff across campus.
+\end{itemize}
+}
+
+\timelineitemheader{Audio/Visual Team Coordinator}{2024 -- 2025}{APIU Media Services}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Led a technical team of students to manage complete AV setups, coordinating events, and live broadcasting for major university events.
+\end{itemize}
+}
+
+\timelineitemheader{Audio/Visual Team Member}{2024 -- Present}{APIU Media Services}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Manage complete AV setups, and live broadcasting for major university events.
+\end{itemize}
+}
+
+% PROJECTS
+\timelineheader{code}{Projects}
+
+\timelineitemheader{AV-Scheduler}{Next.js, Laravel, PostgreSQL}{APIU Media Services}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Architected a full-stack, real-time scheduling application running in production for tracking tasks, resources, and securing key distribution.
+\end{itemize}
+}
+
+\timelineitemheader{Purchasing \& Inventory System}{Next.js, TypeScript}{University Web App}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Developed modular, reusable UI components including dynamic data tables and dashboards focusing on high performance and clean UX.
+\end{itemize}
+}
+
+\timelineitemheader{HabbyKo}{Flutter, Firebase}{Mobile App}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Developed a cross-platform mobile habit-tracking application featuring robust state management and real-time cloud data synchronization.
+\end{itemize}
+}
+
+\timelineitemheader{PDF to PPT}{Python, Gemini API}{AI Automation}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Engineered an automated pipeline utilizing the Gemini API to parse layouts and generate native PowerPoint slides from scanned PDFs.
+\end{itemize}
+}
+
+% EDUCATION
+\timelineheader{graduation-cap}{Education}
+\timelineitemheader{B.Sc. in Information Technology}{2023 -- Present}{Asia-Pacific International University (APIU)}
+\timelineitemdesc{
+\begin{itemize}[leftmargin=0.4cm,itemsep=1pt,topsep=0pt]
+  \item Expected Graduation: 2027. Relevant Coursework: Software Engineering, Web Development, Database Systems, Computer Networks.
+\end{itemize}
+}
+
+\end{tcolorbox}
+\end{minipage}
+
+\end{document}
