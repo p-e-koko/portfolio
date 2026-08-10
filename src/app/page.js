@@ -580,10 +580,10 @@ export default function Home() {
                             <div className="w-full flex justify-center items-center py-4">
                               <div className="flex w-full flex-col gap-6 md:flex-row">
                                 <div className="relative h-[280px] w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900 shadow-xl md:h-[320px]">
-                                  <Image src="/images/av-scheduler-dark.png" alt="AV Scheduler Dark Mode" fill className="object-contain p-2" />
+                                  <Image src="/images/av-dark.png" alt="AV Scheduler Dark Mode" fill className="object-contain p-2" />
                                 </div>
                                 <div className="relative h-[280px] w-full overflow-hidden rounded-xl border border-zinc-700 bg-white shadow-xl md:h-[320px]">
-                                  <Image src="/images/av-scheduler-light.png" alt="AV Scheduler Light Mode" fill className="object-contain p-2" />
+                                  <Image src="/images/av-light.png" alt="AV Scheduler Light Mode" fill className="object-contain p-2" />
                                 </div>
                               </div>
                             </div>
