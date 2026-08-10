@@ -17,34 +17,6 @@ const projects = [
     whatIDid: "Designed the full UI/UX flow and implemented the application logic in Flutter, integrating dynamic sorting animations and interactive game components.",
     used: ["Flutter", "Firebase Cloud Firestore", "Firebase Remote Config"],
     type: "Mobile Application"
-  },
-  {
-    title: "HabbyKo",
-    description: "A clean, intuitive habit and goal tracker mobile application.",
-    whatIDid: "Designed the interactive UI/UX layout and implemented the application utilizing Riverpod for global state management and Firebase for cloud syncing.",
-    used: ["Flutter", "Firebase Cloud Firestore", "Firebase Authentication", "Riverpod"],
-    type: "Mobile Application"
-  },
-  {
-    title: "System for Purchasing and Inventory (SPI)",
-    description: "University-wide web application for purchasing and inventory management, built in collaboration with university alumni.",
-    whatIDid: "Primarily responsible for frontend architecture, implementing responsive interfaces, dashboard analytics, and clean inventory tables.",
-    used: ["Next.js", "TypeScript", "Tailwind CSS"],
-    type: "Web Application"
-  },
-  {
-    title: "excel_to_lowerthird",
-    description: "Automation script generating PowerPoint lowerthird graphics from Excel sheets for graduation livestreaming.",
-    whatIDid: "Created a Python script that parses excel data sheets and dynamically builds PowerPoint slides based on structured graduation templates.",
-    used: ["Python"],
-    type: "Python Script"
-  },
-  {
-    title: "pdf_to_ppt",
-    description: "AI tool that scans PDF documents and converts them into structured, readable presentation slides.",
-    whatIDid: "Developed a script integrating the Gemini API to analyze document layout, parse unstructured text, and assemble cohesive slides.",
-    used: ["Python", "Google Cloud AI", "Gemini API"],
-    type: "AI Tool"
   }
 ];
 
@@ -52,13 +24,13 @@ const getDisplayDate = (item) => {
   if (item.date) return item.date;
   const yearStr = String(item.year);
   const monthStr = String(item.month || "");
-  
+
   if (yearStr.includes("-")) {
     const years = yearStr.split("-").map(y => y.trim());
-    const months = monthStr.includes("-") 
-      ? monthStr.split("-").map(m => m.trim()) 
+    const months = monthStr.includes("-")
+      ? monthStr.split("-").map(m => m.trim())
       : [monthStr, monthStr];
-    
+
     return `${months[0]} ${years[0]} - ${months[1] || months[0]} ${years[1]}`;
   }
   return `${item.month} ${item.year}`;
@@ -82,8 +54,8 @@ export default function Home() {
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-16 pt-8 lg:px-12">
         {/* Top navigation */}
         <header className="flex items-center justify-between py-4">
-          <div className="text-xl font-semibold tracking-tight text-purple-400">
-            devfolio
+          <div className="text-xl font-semibold tracking-tight text-orange-400">
+            PEKKO.
           </div>
           <nav className="hidden gap-8 text-sm text-zinc-300 md:flex">
             <a href="#about" className="hover:text-white">
@@ -168,7 +140,7 @@ export default function Home() {
                       href="https://github.com/p-e-koko/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-purple-400 hover:underline transition-colors break-all"
+                      className="hover:text-orange-400 hover:underline transition-colors break-all"
                     >
                       @p-e-koko
                     </a>
@@ -181,13 +153,13 @@ export default function Home() {
                 <div className="space-y-4">
                   <p>
                     Hi, I'm Pann Ei Ko Ko, an IT senior student at Asia-Pacific International University with a passion for building practical and user-friendly software solutions.
-I enjoy working on web and mobile applications, especially projects that combine clean design with efficient functionality.
+                    I enjoy working on web and mobile applications, especially projects that combine clean design with efficient functionality.
                   </p>
                   <p>
                     Throughout my academic and personal projects, I have collaborated with teams to design, develop, and deploy software solutions while continuously improving my problem-solving and technical skills. I'm particularly interested in web development, software engineering, and learning new technologies that help create meaningful digital experiences.
                   </p>
                   <p>
-                    Outside of technology, I really enjoy playing badminton. 
+                    Outside of technology, I really enjoy playing badminton.
                   </p>
                 </div>
 
@@ -278,7 +250,7 @@ I enjoy working on web and mobile applications, especially projects that combine
                   {group.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-purple-500/40 bg-purple-500/10 px-3 py-1 text-[11px] font-medium text-purple-200"
+                      className="rounded-full border border-orange-500/40 bg-orange-500/10 px-3 py-1 text-[11px] font-medium text-orange-200"
                     >
                       {tag}
                     </span>
@@ -300,7 +272,7 @@ I enjoy working on web and mobile applications, especially projects that combine
               <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
                 Within university
               </h3>
-              <div className="absolute left-[18px] top-10 bottom-0 w-px bg-gradient-to-b from-purple-400/80 via-purple-500/40 to-transparent" />
+              <div className="absolute left-[18px] top-10 bottom-0 w-px bg-gradient-to-b from-orange-400/80 via-orange-500/40 to-transparent" />
               {[
                 {
                   year: "2023-2026",
@@ -328,14 +300,14 @@ I enjoy working on web and mobile applications, especially projects that combine
                 },
               ].map((item) => (
                 <article key={`${item.year}-${item.role}`} className="relative flex gap-6 pl-10">
-                  <div className="absolute left-0 mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-purple-500 text-[10px] font-semibold text-white shadow-[0_10px_30px_rgba(168,85,247,0.7)]">
+                  <div className="absolute left-0 mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500 text-[10px] font-semibold text-white shadow-[0_10px_30px_rgba(249,115,22,0.7)]">
                     {getCircleYear(item.year)}
                   </div>
                   <div className="flex-1 rounded-3xl border border-zinc-800 bg-zinc-950/80 px-6 py-5">
                     <h4 className="text-sm font-semibold text-zinc-50">
                       {item.role}
                     </h4>
-                    <p className="text-xs font-medium text-purple-300">{item.place}</p>
+                    <p className="text-xs font-medium text-orange-300">{item.place}</p>
                     <p className="mt-1 text-[11px] uppercase tracking-wide text-zinc-500">
                       {getDisplayDate(item)}
                     </p>
@@ -350,7 +322,7 @@ I enjoy working on web and mobile applications, especially projects that combine
               <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
                 Outside university
               </h3>
-              <div className="absolute left-[18px] top-10 bottom-0 w-px bg-gradient-to-b from-purple-400/80 via-purple-500/40 to-transparent" />
+              <div className="absolute left-[18px] top-10 bottom-0 w-px bg-gradient-to-b from-orange-400/80 via-orange-500/40 to-transparent" />
               {[
                 {
                   year: "2025 - 2026",
@@ -371,14 +343,14 @@ I enjoy working on web and mobile applications, especially projects that combine
                 },
               ].map((item) => (
                 <article key={`${item.year}-${item.role}`} className="relative flex gap-6 pl-10">
-                  <div className="absolute left-0 mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-purple-500 text-[10px] font-semibold text-white shadow-[0_10px_30px_rgba(168,85,247,0.7)]">
+                  <div className="absolute left-0 mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500 text-[10px] font-semibold text-white shadow-[0_10px_30px_rgba(249,115,22,0.7)]">
                     {getCircleYear(item.year)}
                   </div>
                   <div className="flex-1 rounded-3xl border border-zinc-800 bg-zinc-950/80 px-6 py-5">
                     <h4 className="text-sm font-semibold text-zinc-50">
                       {item.role}
                     </h4>
-                    <p className="text-xs font-medium text-purple-300">{item.place}</p>
+                    <p className="text-xs font-medium text-orange-300">{item.place}</p>
                     <p className="mt-1 text-[11px] uppercase tracking-wide text-zinc-500">
                       {getDisplayDate(item)}
                     </p>
@@ -400,18 +372,18 @@ I enjoy working on web and mobile applications, especially projects that combine
               <article
                 key={project.title}
                 onClick={() => setActiveProject(project)}
-                className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.16),transparent_55%),radial-gradient(circle_at_bottom,_rgba(39,39,42,0.9),#020617)] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1 cursor-pointer hover:border-zinc-700/80"
+                className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.16),transparent_55%),radial-gradient(circle_at_bottom,_rgba(39,39,42,0.9),#020617)] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1 cursor-pointer hover:border-zinc-700/80"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-sm font-semibold text-zinc-50 group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-sm font-semibold text-zinc-50 group-hover:text-orange-300 transition-colors">
                     {project.title}
                   </h3>
-                  <span className="rounded-full bg-purple-500/10 border border-purple-500/25 px-2.5 py-0.5 text-[10px] font-medium text-purple-300">
+                  <span className="rounded-full bg-orange-500/10 border border-orange-500/25 px-2.5 py-0.5 text-[10px] font-medium text-orange-300">
                     {project.type}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-zinc-400 line-clamp-2">{project.description}</p>
-                
+
                 {/* Tech tags on card */}
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.used.slice(0, 3).map((tech) => (
@@ -426,7 +398,7 @@ I enjoy working on web and mobile applications, especially projects that combine
                   )}
                 </div>
 
-                <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-purple-300 transition-all duration-300 group-hover:translate-x-1">
+                <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-orange-300 transition-all duration-300 group-hover:translate-x-1">
                   View details <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </div>
               </article>
@@ -456,10 +428,10 @@ I enjoy working on web and mobile applications, especially projects that combine
               Email Me
             </a>
             <div className="flex justify-end gap-4 text-xs text-zinc-500">
-              <a 
-                href="https://github.com/p-e-koko/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/p-e-koko/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-zinc-300"
               >
                 GitHub
@@ -476,17 +448,17 @@ I enjoy working on web and mobile applications, especially projects that combine
 
         {/* Modal Overlay */}
         {activeProject && (
-          <div 
+          <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6 transition-all duration-300 animate-fade-in"
             onClick={() => setActiveProject(null)}
           >
             {/* Modal Body */}
-            <div 
-              className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-zinc-800 bg-zinc-950 p-6 md:p-10 shadow-2xl shadow-purple-950/20"
+            <div
+              className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-zinc-800 bg-zinc-950 p-6 md:p-10 shadow-2xl shadow-orange-950/20"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
-              <button 
+              <button
                 onClick={() => setActiveProject(null)}
                 className="absolute right-6 top-6 rounded-full border border-zinc-800 bg-zinc-900/50 p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200"
                 aria-label="Close modal"
@@ -499,7 +471,7 @@ I enjoy working on web and mobile applications, especially projects that combine
               <div className="space-y-6">
                 {/* Header */}
                 <div>
-                  <span className="rounded-full bg-purple-500/10 border border-purple-500/25 px-2.5 py-0.5 text-xs font-medium text-purple-300">
+                  <span className="rounded-full bg-orange-500/10 border border-orange-500/25 px-2.5 py-0.5 text-xs font-medium text-orange-300">
                     {activeProject.type}
                   </span>
                   <h3 className="mt-2 text-2xl md:text-3xl font-bold text-zinc-50">
@@ -530,8 +502,8 @@ I enjoy working on web and mobile applications, especially projects that combine
                     </div>
 
                     {activeProject.additionalInfo && (
-                      <div className="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-4">
-                        <p className="text-xs text-purple-300 leading-relaxed">
+                      <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-4">
+                        <p className="text-xs text-orange-300 leading-relaxed">
                           💡 <strong>Status:</strong> {activeProject.additionalInfo}
                         </p>
                       </div>
@@ -570,29 +542,48 @@ I enjoy working on web and mobile applications, especially projects that combine
                             <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
                             <span className="h-3 w-3 rounded-full bg-green-500/80" />
                           </div>
-                          <div className="ml-4 flex-1 rounded bg-zinc-950 px-3 py-1 text-[10px] text-zinc-500 font-mono overflow-hidden whitespace-nowrap text-ellipsis">
-                            https://{activeProject.title.toLowerCase().replace(/\s+/g, '-') || 'demo'}.apiu.edu
+                          <div className="ml-4 flex-1 rounded bg-zinc-950 px-3 py-1 text-[10px] text-zinc-500 font-mono overflow-hidden whitespace-nowrap text-ellipsis flex items-center">
+                            {activeProject.title === "AV-Scheduler" ? (
+                              <span className="flex items-center gap-1.5 opacity-80">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                Internal Tool (URL Hidden)
+                              </span>
+                            ) : (
+                              `https://${activeProject.title.toLowerCase().replace(/\s+/g, '-') || 'demo'}.apiu.edu`
+                            )}
                           </div>
                         </div>
                         {/* Showcase Media Box */}
                         <div className="relative flex min-h-[260px] flex-col items-center justify-center border-t-0 border-zinc-800 bg-zinc-950/40 p-6 text-center">
-                          {/* Inner Placeholder styling */}
-                          <div className="space-y-3">
-                            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
-                              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                              </svg>
+                          {activeProject.title === "AV-Scheduler" ? (
+                            <div className="w-full flex justify-center items-center py-4">
+                              <div className="flex w-full flex-col gap-6 md:flex-row">
+                                <div className="relative h-[280px] w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900 shadow-xl md:h-[320px]">
+                                  <Image src="/images/av-scheduler-dark.png" alt="AV Scheduler Dark Mode" fill className="object-contain p-2" />
+                                </div>
+                                <div className="relative h-[280px] w-full overflow-hidden rounded-xl border border-zinc-700 bg-white shadow-xl md:h-[320px]">
+                                  <Image src="/images/av-scheduler-light.png" alt="AV Scheduler Light Mode" fill className="object-contain p-2" />
+                                </div>
+                              </div>
                             </div>
-                            <div>
-                              <h5 className="text-sm font-semibold text-zinc-200">Video Demo & Mockups Placeholder</h5>
-                              <p className="mt-1 text-xs text-zinc-500 max-w-xs mx-auto">
-                                Put your web application demonstration video, walkthrough GIF, or interface screenshots here.
-                              </p>
+                          ) : (
+                            <div className="space-y-3">
+                              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400">
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <h5 className="text-sm font-semibold text-zinc-200">Video Demo & Mockups Placeholder</h5>
+                                <p className="mt-1 text-xs text-zinc-500 max-w-xs mx-auto">
+                                  Put your web application demonstration video, walkthrough GIF, or interface screenshots here.
+                                </p>
+                              </div>
+                              <div className="pt-2 text-[10px] text-zinc-600 font-mono">
+                                {`<!-- Replace this section in src/app/page.js with <video> or <Image> components -->`}
+                              </div>
                             </div>
-                            <div className="pt-2 text-[10px] text-zinc-600 font-mono">
-                              {`<!-- Replace this section in src/app/page.js with <video> or <Image> components -->`}
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     )}
@@ -604,23 +595,36 @@ I enjoy working on web and mobile applications, especially projects that combine
                           <div className="h-4 w-20 rounded-full bg-zinc-950" />
                         </div>
                         {/* Showcase Media Box */}
-                        <div className="relative flex min-h-[340px] flex-col items-center justify-center bg-zinc-950/40 p-6 text-center">
-                          <div className="space-y-3">
-                            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
-                              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                              </svg>
+                        <div className={`relative flex flex-col items-center justify-center text-center ${activeProject.title === "algorithm_for_students" ? "min-h-[500px] bg-black p-0" : "min-h-[340px] bg-zinc-950/40 p-6"}`}>
+                          {activeProject.title === "algorithm_for_students" ? (
+                            <div className="flex h-full w-full items-center justify-center overflow-hidden">
+                              <video
+                                src="/images/MicrosoftTeams-video.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="h-full w-full object-cover"
+                              />
                             </div>
-                            <div>
-                              <h5 className="text-sm font-semibold text-zinc-200">Mobile App Demo Placeholder</h5>
-                              <p className="mt-1 text-xs text-zinc-500 max-w-[180px] mx-auto">
-                                Place your vertical screen recordings, app store mockups, or system capture video here.
-                              </p>
+                          ) : (
+                            <div className="space-y-3">
+                              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400">
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <h5 className="text-sm font-semibold text-zinc-200">Mobile App Demo Placeholder</h5>
+                                <p className="mt-1 text-xs text-zinc-500 max-w-[180px] mx-auto">
+                                  Place your vertical screen recordings, app store mockups, or system capture video here.
+                                </p>
+                              </div>
+                              <div className="pt-2 text-[10px] text-zinc-600 font-mono">
+                                {`<!-- Insert mobile <video> or <Image> -->`}
+                              </div>
                             </div>
-                            <div className="pt-2 text-[10px] text-zinc-600 font-mono">
-                              {`<!-- Insert mobile <video> or <Image> -->`}
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     )}
@@ -645,14 +649,14 @@ I enjoy working on web and mobile applications, especially projects that combine
                           <div className="space-y-1 text-zinc-400">
                             <p className="text-zinc-600"># Run the script using Python</p>
                             <p className="text-zinc-300">
-                              <span className="text-purple-400">$</span> python {activeProject.title.toLowerCase().replace(/\s+/g, '_')}.py
+                              <span className="text-orange-400">$</span> python {activeProject.title.toLowerCase().replace(/\s+/g, '_')}.py
                             </p>
                             <p className="text-green-400">Initializing components...</p>
                             <p className="text-zinc-400">Loading configurations and templates...</p>
                             <p className="text-zinc-400">Processing input files...</p>
                             <p className="text-green-400">✓ Task executed successfully!</p>
                           </div>
-                          
+
                           <div className="mt-4 border border-dashed border-zinc-800 bg-zinc-900/30 rounded-xl p-4 text-center">
                             <span className="text-xl">📊</span>
                             <h5 className="text-xs font-semibold text-zinc-300 mt-1">Script Demo Placeholder</h5>
