@@ -358,7 +358,7 @@ export default function Home() {
                   role: "Web Master",
                   place: "SEUM: Southeast Union Mission.",
                   body:
-                    "Collaborated with senior developers to design, develop, and maintain web applications using ThreeJS, React, TypeScript, and Tailwind CSS. Mainly focus on Digital Twin concept and IoT ",
+                    "Communicate, design, build website to provide information on Wordpress",
                 },
               ].map((item) => (
                 <article key={`${item.year}-${item.role}`} className="relative flex gap-6 pl-10">
